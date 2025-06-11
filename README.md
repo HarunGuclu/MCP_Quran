@@ -13,33 +13,30 @@ A Model Context Protocol (MCP) server that provides access to the Holy Quran thr
 - **Sajda Verses**: Get all verses requiring prostration
 - **Multi-language Support**: Available in multiple languages and translations
 
-## Installation
+## Deployment on Smithery.ai
+
+This MCP server is optimized for deployment on [Smithery.ai](https://smithery.ai), a platform for hosting MCP servers.
+
+### Quick Deploy
+1. Upload this repository to Smithery.ai
+2. The server will automatically use the `smithery.yaml` configuration
+3. Configure your preferred edition and language in the deployment settings
+
+### Configuration Options
+- `edition`: Default Quran edition (default: "quran-uthmani")
+- `language`: Default language for translations (default: "en")
+
+## Local Installation
 
 1. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Test the API functions (optional):
+2. Run the server:
 ```bash
-python test_api.py
+python server.py
 ```
-
-3. Run the server:
-```bash
-python -m server
-```
-
-Or use the provided batch file on Windows:
-```bash
-run.bat
-```
-
-The batch file provides a menu with options to:
-- Install dependencies
-- Test API functions
-- Start the MCP server
-- Exit
 
 ## Available Tools
 
@@ -138,13 +135,15 @@ This project uses the AlQuran.cloud API which is provided by Islamic Network.
 
 - **app.py**: Core API functions for interacting with AlQuran.cloud API
 - **server.py**: MCP server implementation with tool definitions
-- **smithery.yaml**: MCP configuration file
+- **smithery.yaml**: Smithery.ai deployment configuration
 - **requirements.txt**: Python dependencies
-- **run.bat**: Windows batch file for easy server management
-- **test_api.py**: Test script for API functions
-- **test_mcp_server.py**: Test script for MCP server functionality
-- **simple_test.py**: Simple test for server components
 - **README.md**: This documentation file
+
+## Server Information
+
+When running locally, the MCP server operates using stdio transport (standard input/output) and does not use HTTP ports. It communicates through JSON-RPC messages over stdin/stdout.
+
+For Smithery.ai deployment, the platform handles all networking and communication automatically.
 
 ## Contributing
 

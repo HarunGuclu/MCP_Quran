@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
 """
 Quran MCP Server - A Model Context Protocol server for accessing the Holy Quran
+Optimized for deployment on Smithery.ai
 """
 
 import asyncio

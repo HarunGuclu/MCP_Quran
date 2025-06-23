@@ -6,24 +6,8 @@ startCommand:
   type: stdio
   configSchema:
     type: object
-    properties:
-      edition:
-        type: string
-        description: Default Quran edition to use
-        default: quran-uthmani
-      language:
-        type: string
-        description: Default language for translations
-        default: en
-  commandFunction: |
-    (config) => ({
-      command: 'python',
-      args: ['server.py'],
-      env: {
-        QURAN_DEFAULT_EDITION: config.edition || 'quran-uthmani',
-        QURAN_DEFAULT_LANGUAGE: config.language || 'en'
-      }
-    })
-  exampleConfig:
-    edition: quran-uthmani
-    language: en
+    properties: {}
+  commandFunction:
+    |-
+    (config) => ({ command: 'python', args: ['server.py'] })
+  exampleConfig: {}
